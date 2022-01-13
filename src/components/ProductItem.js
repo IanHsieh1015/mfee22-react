@@ -1,7 +1,16 @@
 import React from 'react'
 
+// 每個商品的物件
+// {
+//     id: 1,
+//     name: '咖啡色 T-shirt',
+//     catgory: 'Shirt',
+//     image: 'https://i.imgur.com/1GrakTl.jpg',
+//     price: 300,
+//  }
+
 function ProductItem(props) {
-  const { name, category, image, price, total, setTotal } = props
+  const { name, category, image, price, count, setCount } = props
 
   return (
     <>
@@ -16,20 +25,20 @@ function ProductItem(props) {
           </div>
           <div className="col">
             <a
-              href="#sec"
+              href="#/"
               onClick={() => {
-                if (total - 1 >= 1) setTotal(total - 1)
+                setCount(count - 1)
               }}
             >
               -
             </a>
-            <a href="#sec" className="border">
-              {total}
+            <a href="#/" className="border">
+              {count}
             </a>
             <a
-              href="#sec"
+              href="#/"
               onClick={() => {
-                setTotal(total + 1)
+                setCount(count + 1)
               }}
             >
               +

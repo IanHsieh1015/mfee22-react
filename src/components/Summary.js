@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Summary(props) {
-  const { count, amount } = props
+  const { productCount, total } = props
 
   return (
     <>
@@ -13,11 +13,11 @@ function Summary(props) {
         </div>
         <hr />
         <div className="row">
-          <div className="col col-style">共 {count} 項目</div>
+          <div className="col col-style">共 {productCount} 項目</div>
         </div>
         <div className="row row-style">
           <div className="col">總價</div>
-          <div className="col text-right">${amount}</div>
+          <div className="col text-right">${total}</div>
         </div>
         <button className="btn">前往付款</button>
       </div>
