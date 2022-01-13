@@ -1,44 +1,51 @@
-// import FC from './components/FC'
-// import CC from './components/CC'
-import Menu from './components/Menu'
-import { data } from './data/index'
+import './App.css'
+import OrderList from './components/OrderList'
+import Summary from './components/Summary'
+
 import { useState } from 'react'
-// function App() App要大寫，可更改，如要修改要改export default App的App與檔名，三個要相同
+
+// 產品訂購的項目
+const products = [
+  {
+    id: 1,
+    name: '咖啡色 T-shirt',
+    category: 'Shirt',
+    image: 'https://i.imgur.com/1GrakTl.jpg',
+    price: 300,
+  },
+  // {
+  //   id: 2,
+  //   name: '白色 T-shirt',
+  //   category: 'Shirt',
+  //   image: 'https://i.imgur.com/ba3tvGm.jpg',
+  //   price: 200,
+  // },
+  // {
+  //   id: 3,
+  //   name: '黑色 T-shirt',
+  //   category: 'Shirt',
+  //   image: 'https://i.imgur.com/pHQ3xT3.jpg',
+  //   price: 450,
+  // },
+  // {
+  //   id: 4,
+  //   name: '黑色 T-shirt',
+  //   category: 'Shirt',
+  //   image: 'https://i.imgur.com/pHQ3xT3.jpg',
+  //   price: 450,
+  // },
+]
+
 function App() {
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(1)
+
   return (
-    <>
-      <button
-        onClick={() => {
-          setTotal(total - 1)
-        }}
-      >
-        -
-      </button>
-      {total}
-      <button
-        onClick={() => {
-          setTotal(total + 1)
-        }}
-      >
-        +
-      </button>
-      <div>{total > 10 && '訊息:最多只能買10件'}</div>
-      <div>{total == 0 && '訊息:未選擇數量'}</div>
-      <br />
-      {data.map((v, i) => {
-        return (
-          <table border="1">
-            <tr>
-              <td>{v.id}</td>
-              <td>{v.name}</td>
-              <td>{v.birth}</td>
-            </tr>
-          </table>
-        )
-      })}
-      {/* <Menu /> */}
-    </>
+    <div className="card">
+      <div className="row">
+        <OrderList products={products} total={total} setTotal={setTotal} />
+        <Summary count={total} amount={total * products[0].price} />
+      </div>
+    </div>
   )
 }
 

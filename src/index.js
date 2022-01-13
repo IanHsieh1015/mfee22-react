@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import Parent from './components/Parent'
-import YoutubePlayerParent from './components/YoutubePlayerParent'
-import SocialShareParent from './components/SocialShareParent'
-import ParentAB from './components/ParentAB'
 
 ReactDOM.render(
   <React.StrictMode>
+    <App />
     {/* <Parent /> */}
-    {/* <App /> */}
+    {/* <CountApp /> */}
     {/* <YoutubePlayerParent /> */}
     {/* <SocialShareParent /> */}
-    <ParentAB />
+    {/* <ParentAB /> */}
   </React.StrictMode>,
   document.getElementById('root')
 )
